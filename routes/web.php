@@ -22,11 +22,11 @@ Route::view('/about', 'frontend.abouts.index')->name('about');
 Route::view('/blogs', 'frontend.blogs.index')->name('blogs');
 
 Route::view('/contact-us', 'frontend.contacts.index')->name('contact');
-
+ 
 Route::view('/services', 'frontend.services.index')->name('services');
 
 Route::get('/admin/dashboard', 'HomeController@index')->name('admin');
 
 Auth::routes(['register' => false]);
 
-Route::resource('/admin/sliders', 'Admin\SlidersController');
+Route::resource('/admin/sliders', 'Admin\SlidersController')->middleware('auth');

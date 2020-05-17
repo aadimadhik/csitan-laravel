@@ -82,6 +82,8 @@ class SlidersController extends Controller
      */
     public function update(SlidersRequest $request, $id)
     {
+        dd($request);
+
         $slider = Slider::find($id);
         $slider->title = $request->title;
         $slider->description = $request->description;
